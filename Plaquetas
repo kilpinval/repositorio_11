@@ -1,4 +1,18 @@
-#include<stdio.h>
+#include "16f876.h"
+#device adc=10
+#fuses XT, NOWDT
+#use delay(clock=4000000)
+#include math.h
+#include lcd.c
+
+void main(){
+  float tv,tr,temp,y;
+  int16 value;
+  lcd_init();
+  setup_port_a();
+}
+
+
 
 int main(){
   if n>=5;
@@ -6,3 +20,4 @@ int main(){
 
     }
 }
+9
