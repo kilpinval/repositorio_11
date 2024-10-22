@@ -9,15 +9,21 @@ void main(){
   float tv,tr,temp,y;
   int16 value;
   lcd_init();
-  setup_port_a();
+  setup_port_a(ALL ANALOG);
+  setup_adc(ADC_CLOCK_INTERNAL);
+  set_adc_channel(0);
+  delay_us(10);
+  do{
+    value = Read_ADC();
+    tv = 5.0 * value/ 1024.0;
+    tr = tv * 1000 /(5.0 - tv);
+    y = log (tr/20000);
+    y = (1.0/298.15) + (y * (1.0/4050.0));o
+    temp = 1.0 / y;
+    temp = temp - 273.15;
+    printf(lcd_putc, "\nT = %04.2ffC", temp);
+
+
+  }while(TRUE);
+
 }
-
-
-
-int main(){
-  if n>=5;
-    while(){
-
-    }
-}
-9
